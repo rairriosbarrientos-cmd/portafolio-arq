@@ -10,8 +10,8 @@ export const site = {
   whatsapp: "527471100646",
   email: "arqt.estudio2004@gmail.com",
   social: "ARQT Estudio de Arquitectura y Diseño",
-  // El PDF solo trae el nombre de la página; agregar las URLs reales cuando se tengan.
-  facebook: null as string | null,
+  facebook: "https://www.facebook.com/share/1CyiR3zu4u/" as string | null,
+  // Pendiente: URL real de Instagram.
   instagram: null as string | null,
   base: "Chilpancingo, Gro.",
   coords: "17°33′N · 99°30′O",

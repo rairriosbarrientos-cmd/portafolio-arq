@@ -124,6 +124,11 @@ export function Nav() {
               <a href={`mailto:${site.email}`} className="block">
                 {site.email}
               </a>
+              {site.facebook && (
+                <a href={site.facebook} target="_blank" rel="noopener noreferrer" className="block">
+                  Facebook ↗
+                </a>
+              )}
             </div>
           </motion.div>
         )}

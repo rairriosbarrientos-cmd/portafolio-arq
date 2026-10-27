@@ -264,7 +264,11 @@ export function Contact() {
             <div className="label text-white/50">Facebook · Instagram</div>
             {site.facebook || site.instagram ? (
               <div className="mt-2 flex gap-4 text-lg">
-                {site.facebook && <a href={site.facebook} target="_blank" rel="noopener noreferrer">Facebook</a>}
+                {site.facebook && (
+                  <a href={site.facebook} target="_blank" rel="noopener noreferrer" className="border-b border-white/40 hover:border-white">
+                    Facebook ↗
+                  </a>
+                )}
                 {site.instagram && <a href={site.instagram} target="_blank" rel="noopener noreferrer">Instagram</a>}
               </div>
             ) : (
