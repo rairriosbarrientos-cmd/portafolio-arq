@@ -238,3 +238,27 @@ body {
     animation-delay: 0s !important;
   }
 }
+
+/* Cortina entre páginas */
+@keyframes curtain-out {
+  to {
+    clip-path: inset(0 0 100% 0);
+    visibility: hidden;
+  }
+}
+
+.curtain {
+  clip-path: inset(0 0 0 0);
+  animation: curtain-out 0.85s cubic-bezier(0.76, 0, 0.24, 1) 0.2s forwards;
+}
+
+.curtain-mark {
+  animation: fade-in 0.3s var(--ease-out) reverse both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .curtain,
+  .curtain-mark {
+    animation-delay: 0s !important;
+  }
+}

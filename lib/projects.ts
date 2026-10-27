@@ -185,11 +185,16 @@ const data: Project[] = [
   },
 ];
 
-export const projects = data.map((p, i) => ({
-  ...p,
-  index: i + 1,
-  images: images[p.slug] as ProjectImage[],
-}));
+export const projects = data.map((p, i) => {
+  const list = images[p.slug] as ProjectImage[];
+  return {
+    ...p,
+    index: i + 1,
+    images: list,
+    /** Versión "plano" (dibujo de líneas) de la imagen principal; ver scripts/make-planos.py. */
+    plano: { ...list[0], src: `/obra/${p.slug}/plano.webp`, sm: `/obra/${p.slug}/plano-sm.webp` } as ProjectImage,
+  };
+});
 
 export type FullProject = (typeof projects)[number];
 

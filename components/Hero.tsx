@@ -5,17 +5,20 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { Img } from "./Img";
 import { Logo } from "./Logo";
+import { hasMounted } from "@/lib/first-load";
 import type { FullProject } from "@/lib/projects";
 import { projectTitle } from "@/lib/projects";
 import { quotes, site } from "@/lib/site";
 
 const SLIDE_MS = 5500;
-const INTRO_DELAY = 1.45;
 
 type Slide = { project: FullProject; imageIndex: number };
 
 export function Hero({ slides, total }: { slides: Slide[]; total: number }) {
   const [active, setActive] = useState(0);
+  // La intro solo se muestra en la carga inicial; al volver al inicio entra la cortina normal.
+  const [withIntro] = useState(() => !hasMounted());
+  const INTRO_DELAY = withIntro ? 1.45 : 0.55;
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "28%"]);
@@ -140,13 +143,15 @@ export function Hero({ slides, total }: { slides: Slide[]; total: number }) {
       </div>
 
       {/* Intro */}
-      <div className="intro fixed inset-0 z-[60] flex flex-col items-center justify-center bg-navy text-white" aria-hidden>
-        <Logo variant="full" className="intro-mark w-44 sm:w-60" />
-        <div className="mt-10 h-px w-44 overflow-hidden bg-white/20 sm:w-60">
-          <div className="intro-bar h-full w-full bg-white" />
+      {withIntro && (
+        <div className="intro fixed inset-0 z-[60] flex flex-col items-center justify-center bg-navy text-white" aria-hidden>
+          <Logo variant="full" className="intro-mark w-44 sm:w-60" />
+          <div className="mt-10 h-px w-44 overflow-hidden bg-white/20 sm:w-60">
+            <div className="intro-bar h-full w-full bg-white" />
+          </div>
+          <span className="label mt-4 text-white/60">{site.base}</span>
         </div>
-        <span className="label mt-4 text-white/60">{site.base}</span>
-      </div>
+      )}
     </section>
   );
 }

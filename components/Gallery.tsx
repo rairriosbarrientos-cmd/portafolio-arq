@@ -41,6 +41,7 @@ export function Gallery({ images, title }: { images: ProjectImage[]; title: stri
               key={img.src}
               type="button"
               onClick={() => setOpen(i)}
+              data-cursor="view"
               className={`group relative block cursor-zoom-in text-left ${wide ? "sm:col-span-2" : ""}`}
               aria-label={`Ampliar imagen ${i + 1} de ${title}`}
             >

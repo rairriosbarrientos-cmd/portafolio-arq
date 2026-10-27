@@ -1,8 +1,10 @@
 import type { Metadata, Viewport } from "next";
 import { Archivo, JetBrains_Mono, Manrope } from "next/font/google";
 import "./globals.css";
+import { Cursor } from "@/components/Cursor";
 import { Nav } from "@/components/Nav";
 import { SmoothScroll } from "@/components/SmoothScroll";
+import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { site } from "@/lib/site";
 
 const archivo = Archivo({
@@ -57,6 +59,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <SmoothScroll />
         <Nav />
         {children}
+        <WhatsAppFab />
+        <Cursor />
       </body>
     </html>
   );

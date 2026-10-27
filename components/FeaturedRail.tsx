@@ -9,7 +9,7 @@ import { projectTitle } from "@/lib/projects";
 
 function Card({ p, tall }: { p: FullProject; tall: boolean }) {
   return (
-    <Link href={`/proyectos/${p.slug}`} className="group block">
+    <Link href={`/proyectos/${p.slug}`} className="group block" data-cursor="view">
       <div className={`relative overflow-hidden bg-ink-2 ${tall ? "aspect-[4/5]" : "aspect-[5/4]"}`}>
         <Img
           image={p.images[0]}
@@ -39,12 +39,12 @@ function Card({ p, tall }: { p: FullProject; tall: boolean }) {
 function Intro({ count }: { count: number }) {
   return (
     <div className="flex flex-col justify-between">
-      <span className="label text-silver">Obra seleccionada</span>
+      <span className="label text-silver">Portafolio · 2026</span>
       <div>
         <h2 className="font-display text-[clamp(3rem,7vw,7.5rem)] font-semibold leading-[0.9]">
-          Del plano
+          Obra
           <br />
-          <span className="text-silver">a la obra.</span>
+          <span className="text-silver">seleccionada.</span>
         </h2>
         <p className="mt-6 max-w-xs text-sm leading-relaxed text-mist">
           {count} proyectos residenciales, comerciales, turísticos y culturales, de Guerrero a Jalisco y Puebla.

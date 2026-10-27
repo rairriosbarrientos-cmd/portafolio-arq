@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { CompareSlider } from "@/components/CompareSlider";
 import { Gallery } from "@/components/Gallery";
 import { Img } from "@/components/Img";
 import { Parallax } from "@/components/Parallax";
@@ -101,13 +102,24 @@ export default async function ProjectPage({ params }: PageProps<"/proyectos/[slu
             </Reveal>
           </div>
 
+          <Reveal className="mt-20">
+            <div className="mb-6 flex items-end justify-between gap-6">
+              <h2 className="font-display text-3xl font-semibold sm:text-5xl">
+                Del plano <span className="text-silver">a la obra</span>
+              </h2>
+              <span className="label hidden text-mist sm:block">Arrastra para comparar ↔</span>
+            </div>
+            <CompareSlider plano={p.plano} render={p.images[0]} title={title} />
+            <p className="label mt-3 text-mist sm:hidden">Arrastra para comparar ↔</p>
+          </Reveal>
+
           <div className="mt-20">
             <Gallery images={p.images} title={title} />
           </div>
         </div>
       </section>
 
-      <Link href={`/proyectos/${next.slug}`} className="group relative block h-[70svh] min-h-[420px] overflow-hidden bg-ink">
+      <Link href={`/proyectos/${next.slug}`} className="group relative block h-[70svh] min-h-[420px] overflow-hidden bg-ink" data-cursor="view">
         <Img
           image={next.images[0]}
           alt={projectTitle(next)}
