@@ -1,0 +1,288 @@
+{
+  "estudio": [
+    {
+      "src": "/obra/estudio/01.webp",
+      "sm": "/obra/estudio/01-sm.webp",
+      "width": 1650,
+      "height": 1275
+    },
+    {
+      "src": "/obra/estudio/02.webp",
+      "sm": "/obra/estudio/02-sm.webp",
+      "width": 1440,
+      "height": 1275
+    },
+    {
+      "src": "/obra/estudio/03.webp",
+      "sm": "/obra/estudio/03-sm.webp",
+      "width": 1650,
+      "height": 1275
+    }
+  ],
+  "casa-puebla": [
+    {
+      "src": "/obra/casa-puebla/01.webp",
+      "sm": "/obra/casa-puebla/01-sm.webp",
+      "width": 1440,
+      "height": 795
+    },
+    {
+      "src": "/obra/casa-puebla/02.webp",
+      "sm": "/obra/casa-puebla/02-sm.webp",
+      "width": 545,
+      "height": 470
+    },
+    {
+      "src": "/obra/casa-puebla/03.webp",
+      "sm": "/obra/casa-puebla/03-sm.webp",
+      "width": 490,
+      "height": 470
+    }
+  ],
+  "casa-de-la-cultura": [
+    {
+      "src": "/obra/casa-de-la-cultura/01.webp",
+      "sm": "/obra/casa-de-la-cultura/01-sm.webp",
+      "width": 1450,
+      "height": 920
+    },
+    {
+      "src": "/obra/casa-de-la-cultura/02.webp",
+      "sm": "/obra/casa-de-la-cultura/02-sm.webp",
+      "width": 880,
+      "height": 347
+    }
+  ],
+  "casa-montes-urales": [
+    {
+      "src": "/obra/casa-montes-urales/01.webp",
+      "sm": "/obra/casa-montes-urales/01-sm.webp",
+      "width": 1440,
+      "height": 850
+    },
+    {
+      "src": "/obra/casa-montes-urales/02.webp",
+      "sm": "/obra/casa-montes-urales/02-sm.webp",
+      "width": 384,
+      "height": 423
+    },
+    {
+      "src": "/obra/casa-montes-urales/03.webp",
+      "sm": "/obra/casa-montes-urales/03-sm.webp",
+      "width": 456,
+      "height": 423
+    }
+  ],
+  "casa-texcalco": [
+    {
+      "src": "/obra/casa-texcalco/01.webp",
+      "sm": "/obra/casa-texcalco/01-sm.webp",
+      "width": 1450,
+      "height": 1060
+    }
+  ],
+  "casa-torres": [
+    {
+      "src": "/obra/casa-torres/01.webp",
+      "sm": "/obra/casa-torres/01-sm.webp",
+      "width": 675,
+      "height": 847
+    },
+    {
+      "src": "/obra/casa-torres/02.webp",
+      "sm": "/obra/casa-torres/02-sm.webp",
+      "width": 632,
+      "height": 847
+    },
+    {
+      "src": "/obra/casa-torres/03.webp",
+      "sm": "/obra/casa-torres/03-sm.webp",
+      "width": 842,
+      "height": 423
+    }
+  ],
+  "departamentos-ekato": [
+    {
+      "src": "/obra/departamentos-ekato/01.webp",
+      "sm": "/obra/departamentos-ekato/01-sm.webp",
+      "width": 830,
+      "height": 1160
+    },
+    {
+      "src": "/obra/departamentos-ekato/02.webp",
+      "sm": "/obra/departamentos-ekato/02-sm.webp",
+      "width": 815,
+      "height": 567
+    },
+    {
+      "src": "/obra/departamentos-ekato/03.webp",
+      "sm": "/obra/departamentos-ekato/03-sm.webp",
+      "width": 815,
+      "height": 345
+    }
+  ],
+  "departamentos-solartiz": [
+    {
+      "src": "/obra/departamentos-solartiz/01.webp",
+      "sm": "/obra/departamentos-solartiz/01-sm.webp",
+      "width": 1450,
+      "height": 745
+    },
+    {
+      "src": "/obra/departamentos-solartiz/02.webp",
+      "sm": "/obra/departamentos-solartiz/02-sm.webp",
+      "width": 717,
+      "height": 525
+    }
+  ],
+  "pro-laguna-41": [
+    {
+      "src": "/obra/pro-laguna-41/01.webp",
+      "sm": "/obra/pro-laguna-41/01-sm.webp",
+      "width": 1650,
+      "height": 490
+    },
+    {
+      "src": "/obra/pro-laguna-41/02.webp",
+      "sm": "/obra/pro-laguna-41/02-sm.webp",
+      "width": 486,
+      "height": 670
+    },
+    {
+      "src": "/obra/pro-laguna-41/03.webp",
+      "sm": "/obra/pro-laguna-41/03-sm.webp",
+      "width": 440,
+      "height": 670
+    }
+  ],
+  "la-bocata": [
+    {
+      "src": "/obra/la-bocata/01.webp",
+      "sm": "/obra/la-bocata/01-sm.webp",
+      "width": 1440,
+      "height": 785
+    },
+    {
+      "src": "/obra/la-bocata/02.webp",
+      "sm": "/obra/la-bocata/02-sm.webp",
+      "width": 390,
+      "height": 486
+    },
+    {
+      "src": "/obra/la-bocata/03.webp",
+      "sm": "/obra/la-bocata/03-sm.webp",
+      "width": 528,
+      "height": 380
+    }
+  ],
+  "roof-garden-nogales": [
+    {
+      "src": "/obra/roof-garden-nogales/01.webp",
+      "sm": "/obra/roof-garden-nogales/01-sm.webp",
+      "width": 897,
+      "height": 980
+    },
+    {
+      "src": "/obra/roof-garden-nogales/02.webp",
+      "sm": "/obra/roof-garden-nogales/02-sm.webp",
+      "width": 751,
+      "height": 475
+    },
+    {
+      "src": "/obra/roof-garden-nogales/03.webp",
+      "sm": "/obra/roof-garden-nogales/03-sm.webp",
+      "width": 751,
+      "height": 304
+    }
+  ],
+  "casa-xicoh": [
+    {
+      "src": "/obra/casa-xicoh/01.webp",
+      "sm": "/obra/casa-xicoh/01-sm.webp",
+      "width": 1150,
+      "height": 1275
+    }
+  ],
+  "departamentos-timotlan": [
+    {
+      "src": "/obra/departamentos-timotlan/01.webp",
+      "sm": "/obra/departamentos-timotlan/01-sm.webp",
+      "width": 732,
+      "height": 1275
+    },
+    {
+      "src": "/obra/departamentos-timotlan/02.webp",
+      "sm": "/obra/departamentos-timotlan/02-sm.webp",
+      "width": 706,
+      "height": 615
+    }
+  ],
+  "casa-magnolias": [
+    {
+      "src": "/obra/casa-magnolias/01.webp",
+      "sm": "/obra/casa-magnolias/01-sm.webp",
+      "width": 800,
+      "height": 1275
+    },
+    {
+      "src": "/obra/casa-magnolias/02.webp",
+      "sm": "/obra/casa-magnolias/02-sm.webp",
+      "width": 648,
+      "height": 656
+    }
+  ],
+  "oficina-romacal": [
+    {
+      "src": "/obra/oficina-romacal/01.webp",
+      "sm": "/obra/oficina-romacal/01-sm.webp",
+      "width": 940,
+      "height": 670
+    },
+    {
+      "src": "/obra/oficina-romacal/02.webp",
+      "sm": "/obra/oficina-romacal/02-sm.webp",
+      "width": 1073,
+      "height": 598
+    },
+    {
+      "src": "/obra/oficina-romacal/03.webp",
+      "sm": "/obra/oficina-romacal/03-sm.webp",
+      "width": 498,
+      "height": 670
+    }
+  ],
+  "cocina-parazal": [
+    {
+      "src": "/obra/cocina-parazal/01.webp",
+      "sm": "/obra/cocina-parazal/01-sm.webp",
+      "width": 1440,
+      "height": 783
+    },
+    {
+      "src": "/obra/cocina-parazal/02.webp",
+      "sm": "/obra/cocina-parazal/02-sm.webp",
+      "width": 515,
+      "height": 489
+    },
+    {
+      "src": "/obra/cocina-parazal/03.webp",
+      "sm": "/obra/cocina-parazal/03-sm.webp",
+      "width": 456,
+      "height": 489
+    }
+  ],
+  "casa-guerrero-200": [
+    {
+      "src": "/obra/casa-guerrero-200/01.webp",
+      "sm": "/obra/casa-guerrero-200/01-sm.webp",
+      "width": 1650,
+      "height": 985
+    },
+    {
+      "src": "/obra/casa-guerrero-200/02.webp",
+      "sm": "/obra/casa-guerrero-200/02-sm.webp",
+      "width": 910,
+      "height": 1275
+    }
+  ]
+}

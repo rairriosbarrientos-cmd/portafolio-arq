@@ -1,0 +1,240 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #070b18;
+  --ink-2: #0d1430;
+  --navy: #172b6e;
+  --navy-bright: #2b4bb3;
+  --bone: #f2efe8;
+  --paper: #faf8f4;
+  --silver: #c4c8d2;
+  --mist: #8a91a6;
+  --line-dark: rgb(255 255 255 / 0.12);
+  --line-light: rgb(7 11 24 / 0.12);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-navy: var(--navy);
+  --color-navy-bright: var(--navy-bright);
+  --color-bone: var(--bone);
+  --color-paper: var(--paper);
+  --color-silver: var(--silver);
+  --color-mist: var(--mist);
+  --font-display: var(--font-archivo);
+  --font-sans: var(--font-manrope);
+  --font-mono: var(--font-jetbrains);
+  --ease-out-expo: var(--ease-out);
+}
+
+html {
+  background: var(--ink);
+  -webkit-tap-highlight-color: transparent;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+body {
+  background: var(--ink);
+  color: var(--bone);
+  font-family: var(--font-manrope), system-ui, sans-serif;
+  overflow-x: clip;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--navy-bright);
+  color: white;
+}
+
+.font-display {
+  font-family: var(--font-archivo), system-ui, sans-serif;
+  font-stretch: 112%;
+  letter-spacing: -0.035em;
+}
+
+.font-wide {
+  font-family: var(--font-archivo), system-ui, sans-serif;
+  font-stretch: 125%;
+}
+
+.label {
+  font-family: var(--font-jetbrains), ui-monospace, monospace;
+  font-size: 0.6875rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* Retícula tipo plano para fondos */
+.blueprint {
+  background-image:
+    linear-gradient(var(--line-dark) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line-dark) 1px, transparent 1px);
+  background-size: 96px 96px;
+  background-position: -1px -1px;
+}
+
+.blueprint-light {
+  background-image:
+    linear-gradient(var(--line-light) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line-light) 1px, transparent 1px);
+  background-size: 96px 96px;
+  background-position: -1px -1px;
+}
+
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.07;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@keyframes marquee {
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.marquee-track {
+  animation: marquee 38s linear infinite;
+}
+
+@keyframes kenburns {
+  from {
+    transform: scale(1.14);
+  }
+  to {
+    transform: scale(1.02);
+  }
+}
+
+@keyframes progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes scroll-cue {
+  0% {
+    transform: translateY(-100%);
+  }
+  60%,
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.scroll-cue::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: currentColor;
+  animation: scroll-cue 2.2s var(--ease-out) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Intro: cortina con el isotipo, solo CSS para que funcione antes de hidratar */
+@keyframes intro-out {
+  to {
+    clip-path: inset(0 0 100% 0);
+    visibility: hidden;
+  }
+}
+
+@keyframes intro-mark {
+  from {
+    opacity: 0;
+    transform: scale(0.8) rotate(-8deg);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes intro-bar {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes rise {
+  from {
+    transform: translate3d(0, 105%, 0);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.intro {
+  clip-path: inset(0 0 0 0);
+  animation: intro-out 0.9s var(--ease-out) 1.5s forwards;
+}
+
+.intro-mark {
+  animation: intro-mark 1s var(--ease-out) 0.1s both;
+}
+
+.intro-bar {
+  transform-origin: left;
+  animation: intro-bar 1.3s var(--ease-out) 0.1s both;
+}
+
+.rise {
+  animation: rise 1.2s var(--ease-out) both;
+}
+
+.fade-in {
+  animation: fade-in 1.2s var(--ease-out) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro,
+  .intro-mark,
+  .intro-bar,
+  .rise,
+  .fade-in {
+    animation-delay: 0s !important;
+  }
+}
