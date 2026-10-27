@@ -3,8 +3,9 @@ import { FeaturedRail } from "@/components/FeaturedRail";
 import { Hero } from "@/components/Hero";
 import { Marquee } from "@/components/Marquee";
 import { ProjectIndex } from "@/components/ProjectIndex";
+import { QuoteWizard } from "@/components/QuoteWizard";
 import { Architect, ClosingQuote, Contact, Philosophy, Services, Studio } from "@/components/Sections";
-import { categories, getProject, locations, projects, studioImages } from "@/lib/projects";
+import { categories, getProject, locations, projects, projectTitle, studioImages } from "@/lib/projects";
 import { services } from "@/lib/site";
 
 function mustGet(slug: string) {
@@ -23,6 +24,8 @@ const heroSlides = [
 
 const blueprint = mustGet("casa-montes-urales");
 
+const quoteRefs = projects.map((p) => ({ slug: p.slug, title: projectTitle(p), category: p.category }));
+
 const portrait = { src: "/obra/gustavo.webp", sm: "/obra/gustavo.webp", width: 484, height: 648 };
 
 export default function Home() {
@@ -38,6 +41,7 @@ export default function Home() {
       <Services />
       <Architect portrait={portrait} />
       <ClosingQuote image={studioImages[1]} />
+      <QuoteWizard refs={quoteRefs} />
       <Contact />
     </main>
   );

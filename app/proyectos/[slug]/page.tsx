@@ -4,10 +4,12 @@ import { notFound } from "next/navigation";
 import { CompareSlider } from "@/components/CompareSlider";
 import { Gallery } from "@/components/Gallery";
 import { Img } from "@/components/Img";
+import { JsonLd } from "@/components/JsonLd";
 import { Parallax } from "@/components/Parallax";
 import { Reveal } from "@/components/Reveal";
 import { Contact } from "@/components/Sections";
 import { getProject, projects, projectTitle } from "@/lib/projects";
+import { projectSchema } from "@/lib/schema";
 import { site } from "@/lib/site";
 
 export const dynamicParams = false;
@@ -24,6 +26,7 @@ export async function generateMetadata({ params }: PageProps<"/proyectos/[slug]"
   return {
     title,
     description: `${title}, ${p.location}. ${p.summary}`,
+    alternates: { canonical: `/proyectos/${p.slug}/` },
     openGraph: { title: `${title} — ARQT`, description: p.summary, images: [{ url: p.images[0].src, width: p.images[0].width, height: p.images[0].height }] },
   };
 }
@@ -46,6 +49,7 @@ export default async function ProjectPage({ params }: PageProps<"/proyectos/[slu
 
   return (
     <main>
+      <JsonLd data={projectSchema(p)} />
       <section className="relative h-[92svh] min-h-[560px] overflow-hidden bg-ink">
         <Parallax className="absolute inset-0" amount={10}>
           <Img image={p.images[0]} alt={title} priority className="h-full w-full scale-110 object-cover" />
@@ -99,6 +103,15 @@ export default async function ProjectPage({ params }: PageProps<"/proyectos/[slu
                   </li>
                 ))}
               </ul>
+              <Link
+                href={`/?proyecto=${p.slug}#cotizar`}
+                className="group mt-8 flex h-14 items-center justify-between rounded-full bg-white px-6 text-ink transition-transform duration-500 hover:scale-[1.02]"
+              >
+                <span className="font-display font-semibold">Quiero un proyecto así</span>
+                <span className="transition-transform duration-500 group-hover:translate-x-1" aria-hidden>
+                  →
+                </span>
+              </Link>
             </Reveal>
           </div>
 

@@ -13,6 +13,7 @@ const links = [
   { href: "/#estudio", label: "Estudio" },
   { href: "/#servicios", label: "Servicios" },
   { href: "/#arquitecto", label: "Arquitecto" },
+  { href: "/#cotizar", label: "Cotizar" },
   { href: "/#contacto", label: "Contacto" },
 ];
 
@@ -62,7 +63,13 @@ export function Nav() {
           </Link>
           <nav className="hidden items-center gap-8 md:flex" aria-label="Principal">
             {links.map((l) => (
-              <Link key={l.href} href={l.href} className="label opacity-80 transition-opacity hover:opacity-100">
+              <Link
+                key={l.href}
+                href={l.href}
+                className={`label transition-opacity hover:opacity-100 ${
+                  l.label === "Cotizar" ? "rounded-full border border-white px-4 py-2 opacity-100" : "opacity-80"
+                }`}
+              >
                 {l.label}
               </Link>
             ))}
