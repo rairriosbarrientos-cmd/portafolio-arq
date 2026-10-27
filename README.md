@@ -30,7 +30,14 @@ python3 scripts/extract-images.py /tmp/pdf
 Para mejor calidad, reemplaza cada `NN.webp` por el render original (y regenera `NN-sm.webp` a ~760 px)
 y actualiza `width`/`height` en `lib/images.json`.
 
-## Publicar
+## Publicar en Netlify
 
-Define `NEXT_PUBLIC_SITE_URL` con el dominio final (ej. `https://arqt.mx`) para que la imagen al compartir
-en WhatsApp/Facebook use la URL correcta. Agrega las URLs reales de Facebook e Instagram en `lib/site.ts`.
+`netlify.toml` ya trae todo: comando `npm run build`, carpeta `out`, Node 22.
+
+1. Netlify → **Add new site → Import an existing project → GitHub** → `portafolio-arq`.
+2. Deja los valores que detecta del `netlify.toml` y da **Deploy**.
+3. Cada push a `main` vuelve a publicar solo.
+
+La imagen al compartir usa la URL de Netlify automáticamente. Si conectas un dominio propio, define
+`NEXT_PUBLIC_SITE_URL` (ej. `https://arqt.mx`) en **Site configuration → Environment variables** y vuelve a publicar.
+Agrega las URLs reales de Facebook e Instagram en `lib/site.ts`.

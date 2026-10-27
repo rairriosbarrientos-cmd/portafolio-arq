@@ -4,8 +4,8 @@ export const site = {
   name: "ARQT",
   fullName: "ARQT Estudio de Arquitectura y Diseño",
   tagline: "Estudio de Arquitectura y Diseño",
-  // Dominio final: definir NEXT_PUBLIC_SITE_URL al publicar (Vercel/Netlify).
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+  // Dominio final: NEXT_PUBLIC_SITE_URL si se define; si no, la URL que Netlify asigna en el build.
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? process.env.URL ?? "http://localhost:3000",
   phone: "747 110 06 46",
   whatsapp: "527471100646",
   email: "arqt.estudio2004@gmail.com",
