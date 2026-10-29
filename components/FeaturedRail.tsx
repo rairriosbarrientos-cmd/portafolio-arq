@@ -41,7 +41,7 @@ function Intro({ count }: { count: number }) {
     <div className="flex flex-col justify-between">
       <span className="label text-silver">Portafolio · 2026</span>
       <div>
-        <h2 className="font-display text-[clamp(3rem,7vw,7.5rem)] font-semibold leading-[0.9]">
+        <h2 className="font-display text-[clamp(3rem,12vw,7.5rem)] md:text-[clamp(3rem,5.2vw,6.5rem)] font-semibold leading-[0.9]">
           Obra
           <br />
           <span className="text-silver">seleccionada.</span>
@@ -89,7 +89,7 @@ export function FeaturedRail({ projects, total }: { projects: FullProject[]; tot
         <div className="sticky top-0 flex h-screen flex-col justify-center overflow-hidden">
           <div className="blueprint pointer-events-none absolute inset-0 opacity-30" />
           <motion.div ref={track} style={{ x }} className="relative flex w-max items-end gap-[4vw] px-8 will-change-transform">
-            <div className="flex h-[70vh] w-[28vw] shrink-0">
+            <div className="flex h-[70vh] w-[32vw] shrink-0 pr-[2vw]">
               <Intro count={total} />
             </div>
             {projects.map((p, i) => (
