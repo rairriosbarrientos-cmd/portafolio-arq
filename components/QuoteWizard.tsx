@@ -23,7 +23,7 @@ type Ref = { slug: string; title: string; category: Category };
 
 const STEPS = ["Proyecto", "Alcance", "Detalles", "Contacto"] as const;
 const DRAFT_KEY = "arqt-cotizacion";
-const cities = ["Chilpancingo", "Acapulco", "Guadalajara", "Puebla"];
+const cities = ["Guadalajara", "Zapopan", "Tlaquepaque", "Tlajomulco", "Chilpancingo", "Acapulco"];
 
 function Chip({ on, onClick, children }: { on: boolean; onClick: () => void; children: React.ReactNode }) {
   return (

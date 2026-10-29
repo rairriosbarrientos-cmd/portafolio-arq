@@ -1,4 +1,4 @@
-// Textos y datos de contacto tomados del portafolio PDF de ARQT.
+// Textos y datos de contacto: portafolio PDF de ARQT y textos enviados por el Arq. Gustavo Ríos Barrientos.
 
 export const site = {
   name: "ARQT",
@@ -13,8 +13,9 @@ export const site = {
   facebook: "https://www.facebook.com/share/1CyiR3zu4u/" as string | null,
   // Pendiente: URL real de Instagram.
   instagram: null as string | null,
-  base: "Chilpancingo, Gro.",
-  coords: "17°33′N · 99°30′O",
+  base: "Guadalajara, Jal.",
+  region: "Zona Metropolitana de Guadalajara",
+  coords: "20°40′N · 103°21′O",
 } as const;
 
 export const quotes = {
@@ -66,19 +67,62 @@ export const services = [
 
 export const architect = {
   name: "Arq. Gustavo Ríos Barrientos",
-  headline: "17 años de experiencia entendiendo la arquitectura desde el diseño hasta la obra.",
-  years: 17,
+  role: "Director Fundador",
+  headline: "18 años de experiencia entendiendo la arquitectura desde el diseño hasta la obra.",
+  years: 18,
   bio: [
-    "Mi trayectoria profesional se ha desarrollado alrededor del diseño arquitectónico, la supervisión técnica y la construcción, adquiriendo una perspectiva integral sobre los diferentes momentos que convierten una idea en una obra.",
-    "Esta experiencia me ha permitido desarrollar una manera de trabajar basada en la anticipación: entender desde el proyecto aquello que posteriormente tendrá impacto en la construcción.",
-    "Para ARQT, la experiencia no representa únicamente años de trabajo, representa la capacidad de prever, decidir y resolver.",
-    "Hoy, esta trayectoria se integra a una firma que busca desarrollar arquitectura contemporánea con identidad, cercana al cliente y respaldada por una visión constructiva y empresarial.",
+    "Detrás de ARQT Estudio de Arquitectura y Diseño se consolidan 18 años de mi trayectoria profesional dedicados a transformar ideas en realidades tangibles. Como fundador del estudio, he liderado proyectos de alta exigencia, especializándome con rigor en el diseño, la supervisión técnica y la construcción de espacios residenciales y comerciales.",
+    "Mi llegada a la Zona Metropolitana de Guadalajara responde a una evolución natural. Traigo conmigo una madurez técnica y creativa lista para integrarse al dinamismo de esta región, ofreciendo soluciones de alto valor arquitectónico y un control absoluto en la ejecución de la obra.",
   ],
+  signoff: "Bienvenido a ARQT Estudio, el espacio donde tu visión encuentra su mejor estructura.",
   credentials: [
-    { label: "Céd. Prof. Federal", value: "6276469" },
-    { label: "Céd. Prof. Estatal", value: "PEJ 398631" },
-    { label: "DRO Municipal", value: "#241" },
-    { label: "DRO Estatal", value: "12G/DRO/188" },
-    { label: "CODUA", value: "12G/CODUA/047 · 12G029/DRO/CODUA/082" },
+    {
+      scope: "Federal",
+      items: [{ code: "6276469", label: "Cédula Profesional Federal" }],
+    },
+    {
+      scope: "Guerrero",
+      items: [
+        { code: "12G029/DRO/082", label: "DRO Municipal" },
+        { code: "12G029/DRO/CODUA/082", label: "Corresponsable de Obra en Diseño Urbano y Arquitectónico" },
+        { code: "12G/DRO/188", label: "DRO Estatal" },
+        { code: "CODUA 12G/CODUA/047", label: "Corresponsable de Obra en Diseño Urbano y Arquitectónico" },
+      ],
+    },
+    {
+      scope: "Jalisco",
+      items: [{ code: "PEG 398631", label: "Cédula Profesional Estatal" }],
+    },
   ],
+};
+
+export const focus = {
+  title: "Foco absoluto.",
+  lead: "He decidido concentrar mi experiencia exclusivamente en el sector residencial y comercial para ofrecer algo fundamental: foco absoluto. Al delimitar mi campo de acción, garantizo una atención meticulosa en cada etapa, asegurando que cada proyecto reciba el máximo estándar de calidad técnica y estética.",
+  audiences: [
+    {
+      title: "Para las familias",
+      text: "Diseño hogares que interpretan su estilo de vida, priorizando la habitabilidad, el confort y la conexión emocional con el espacio.",
+    },
+    {
+      title: "Para los inversionistas",
+      text: "Aporto una visión empresarial indispensable. Mi experiencia en supervisión técnica garantiza optimización de recursos, cumplimiento de tiempos y proyectos comerciales con un alto retorno de inversión y plusvalía.",
+    },
+  ],
+  commitments: [
+    {
+      title: "Dirección experta",
+      text: "Superviso personalmente desde el primer trazo conceptual hasta la entrega final en obra.",
+    },
+    {
+      title: "Solidez técnica",
+      text: "18 años en el sector me permiten anticipar retos constructivos, garantizando obras eficientes, seguras y fieles al presupuesto.",
+    },
+    {
+      title: "Estética duradera",
+      text: "Creo arquitectura contemporánea con identidad propia, pensada para trascender y generar impacto visual.",
+    },
+  ],
+  portfolio:
+    "Este portafolio reúne una selección de mis mejores proyectos. Es el testimonio de una carrera construida con disciplina, pasión por el detalle y respeto por la inversión de cada cliente.",
 };

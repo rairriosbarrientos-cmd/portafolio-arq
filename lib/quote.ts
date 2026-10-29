@@ -6,7 +6,6 @@ export const projectTypes = [
   { id: "departamentos", label: "Departamentos", hint: "Vivienda vertical o conjunto" },
   { id: "comercial", label: "Local o restaurante", hint: "Comercio, bar, hospitalidad" },
   { id: "oficina", label: "Oficina", hint: "Corporativo o consultorio" },
-  { id: "turistico", label: "Turístico", hint: "Hotel, villas, complejo" },
   { id: "remodelacion", label: "Remodelación", hint: "Transformar un espacio existente" },
   { id: "interiorismo", label: "Interiorismo", hint: "Cocina, sala, acabados" },
   { id: "otro", label: "Otro", hint: "Cuéntanos en el último paso" },
@@ -19,7 +18,7 @@ export const typeFromCategory: Record<Category, ProjectTypeId> = {
   Residencial: "casa",
   "Vivienda vertical": "departamentos",
   Comercial: "comercial",
-  Turístico: "turistico",
+  Turístico: "comercial",
   Cultural: "otro",
   Interiorismo: "interiorismo",
 };

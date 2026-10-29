@@ -6,7 +6,7 @@ import { Parallax } from "./Parallax";
 import { Reveal, RevealMask } from "./Reveal";
 import { RevealWords } from "./RevealWords";
 import type { ProjectImage } from "@/lib/projects";
-import { about, aboutClose, architect, philosophy, quotes, services, site } from "@/lib/site";
+import { about, aboutClose, architect, focus, philosophy, quotes, services, site } from "@/lib/site";
 
 export function Studio({ total, cities, images }: { total: number; cities: number; images: ProjectImage[] }) {
   const stats = [
@@ -151,16 +151,18 @@ export function Architect({ portrait }: { portrait: ProjectImage }) {
     <section id="arquitecto" className="relative overflow-hidden bg-ink py-24 sm:py-36">
       <div className="mx-auto grid max-w-[1600px] gap-12 px-4 sm:px-8 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-5">
-          <RevealMask className="relative aspect-[484/648] max-w-md">
-            <Img image={portrait} alt={architect.name} sizes="(min-width: 1024px) 30vw, 90vw" className="h-full w-full object-cover" />
-          </RevealMask>
-          <div className="label mt-4 flex max-w-md justify-between text-mist">
-            <span>Fundador · ARQT</span>
-            <span>{site.base}</span>
+          <div className="lg:sticky lg:top-28">
+            <RevealMask className="relative aspect-[3/4] max-w-md">
+              <Img image={portrait} alt={architect.name} sizes="(min-width: 1024px) 30vw, 90vw" className="h-full w-full object-cover" />
+            </RevealMask>
+            <div className="label mt-4 flex max-w-md justify-between text-mist">
+              <span>{architect.role} · ARQT</span>
+              <span>{site.base}</span>
+            </div>
           </div>
         </div>
         <div className="lg:col-span-7">
-          <span className="label text-silver">El arquitecto</span>
+          <span className="label text-silver">Trayectoria y visión</span>
           <h2 className="font-display mt-4 text-[clamp(2.5rem,5.5vw,5.5rem)] font-semibold leading-[0.92]">
             Gustavo
             <br />
@@ -169,25 +171,110 @@ export function Architect({ portrait }: { portrait: ProjectImage }) {
           <Reveal>
             <p className="font-display mt-8 max-w-2xl text-2xl leading-snug text-silver sm:text-3xl">{architect.headline}</p>
           </Reveal>
-          <div className="mt-10 grid gap-6 text-mist sm:grid-cols-2">
+          <div className="mt-10 space-y-6 text-lg leading-relaxed text-mist">
             {architect.bio.map((t, i) => (
-              <Reveal key={i} delay={(i % 2) * 0.1}>
-                <p className="leading-relaxed">{t}</p>
+              <Reveal key={i} delay={i * 0.08}>
+                <p>{t}</p>
               </Reveal>
             ))}
           </div>
           <Reveal>
-            <dl className="mt-12 border border-white/15">
-              <div className="label border-b border-white/15 bg-white/[0.03] px-5 py-3 text-silver">Registro profesional</div>
-              {architect.credentials.map((c) => (
-                <div key={c.label} className="grid grid-cols-[9rem_1fr] gap-4 border-b border-white/10 px-5 py-3 text-sm last:border-b-0 sm:grid-cols-[12rem_1fr]">
-                  <dt className="text-mist">{c.label}</dt>
-                  <dd className="font-mono text-white/90">{c.value}</dd>
+            <div className="mt-12 border border-white/15">
+              <div className="label flex items-center justify-between border-b border-white/15 bg-white/[0.03] px-5 py-3 text-silver">
+                <span>Registro profesional</span>
+                <span className="text-white/40">{architect.credentials.reduce((n, g) => n + g.items.length, 0)} registros</span>
+              </div>
+              {architect.credentials.map((g) => (
+                <div key={g.scope} className="grid gap-3 border-b border-white/10 px-5 py-5 last:border-b-0 sm:grid-cols-[8rem_1fr] sm:gap-6">
+                  <h3 className="label pt-0.5 text-white">{g.scope}</h3>
+                  <dl className="space-y-3">
+                    {g.items.map((c) => (
+                      <div key={c.code} className="grid gap-0.5 sm:grid-cols-[13rem_1fr] sm:gap-4">
+                        <dt className="font-mono text-sm text-white/90">{c.code}</dt>
+                        <dd className="text-sm text-mist">{c.label}</dd>
+                      </div>
+                    ))}
+                  </dl>
                 </div>
               ))}
-            </dl>
+            </div>
           </Reveal>
         </div>
+      </div>
+    </section>
+  );
+}
+
+export function Focus({ portrait }: { portrait: ProjectImage }) {
+  return (
+    <section id="enfoque" className="relative overflow-hidden bg-paper py-24 text-ink sm:py-36">
+      <div className="blueprint-light pointer-events-none absolute inset-0 opacity-50" />
+      <div className="relative mx-auto max-w-[1600px] px-4 sm:px-8">
+        <div className="grid gap-12 lg:grid-cols-12">
+          <div className="lg:col-span-7">
+            <span className="label text-navy">Filosofía y enfoque estratégico</span>
+            <h2 className="font-display mt-4 text-[clamp(3rem,8vw,8rem)] font-semibold leading-[0.88]">{focus.title}</h2>
+            <Reveal>
+              <p className="font-display mt-8 max-w-3xl text-[clamp(1.35rem,2.2vw,2rem)] font-medium leading-snug">{focus.lead}</p>
+            </Reveal>
+          </div>
+          <div className="hidden lg:col-span-4 lg:col-start-9 lg:block">
+            <RevealMask className="aspect-[3/4]">
+              <Img image={portrait} alt="Arq. Gustavo Ríos Barrientos en el estudio" sizes="30vw" className="h-full w-full object-cover" />
+            </RevealMask>
+          </div>
+        </div>
+
+        <span className="label mt-20 block text-ink/50">Mi filosofía une dos mundos esenciales</span>
+        <div className="mt-6 grid gap-4 md:grid-cols-2">
+          {focus.audiences.map((a, i) => (
+            <Reveal key={a.title} delay={i * 0.1}>
+              <article
+                className={`group relative h-full overflow-hidden p-8 sm:p-12 ${i === 0 ? "bg-ink text-white" : "bg-navy text-white"}`}
+              >
+                <div className="blueprint pointer-events-none absolute inset-0 opacity-40" />
+                <span className="label relative text-white/50">0{i + 1}</span>
+                <h3 className="font-display relative mt-10 text-4xl font-semibold sm:text-5xl">{a.title}</h3>
+                <p className="relative mt-5 max-w-md text-lg leading-relaxed text-white/75">{a.text}</p>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+
+        <div className="mt-24 grid gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-4">
+            <span className="label text-navy">Mi compromiso en cada obra</span>
+            <h3 className="font-display mt-4 text-[clamp(2.25rem,4.5vw,4rem)] font-semibold leading-[0.95]">
+              Del primer trazo
+              <br />
+              <span className="text-ink/40">a la entrega.</span>
+            </h3>
+          </div>
+          <div className="grid gap-px bg-ink/15 sm:grid-cols-3 lg:col-span-8">
+            {focus.commitments.map((c, i) => (
+              <Reveal key={c.title} delay={i * 0.08} className="bg-paper">
+                <div className="flex h-full flex-col p-6 sm:p-8">
+                  <span className="font-display text-6xl font-semibold text-navy">0{i + 1}</span>
+                  <h4 className="font-display mt-8 text-2xl font-semibold">{c.title}</h4>
+                  <p className="mt-3 leading-relaxed text-ink/65">{c.text}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+
+        <Reveal>
+          <div className="mt-24 grid gap-8 border-t border-ink/15 pt-12 lg:grid-cols-12">
+            <p className="text-lg leading-relaxed text-ink/70 lg:col-span-6">{focus.portfolio}</p>
+            <div className="lg:col-span-5 lg:col-start-8">
+              <p className="font-display text-2xl font-medium leading-snug sm:text-3xl">{architect.signoff}</p>
+              <p className="mt-6 font-display text-lg font-semibold">{architect.name}</p>
+              <p className="label mt-1 text-ink/50">
+                {architect.role} · {site.fullName}
+              </p>
+            </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

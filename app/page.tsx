@@ -4,7 +4,7 @@ import { Hero } from "@/components/Hero";
 import { Marquee } from "@/components/Marquee";
 import { ProjectIndex } from "@/components/ProjectIndex";
 import { QuoteWizard } from "@/components/QuoteWizard";
-import { Architect, ClosingQuote, Contact, Philosophy, Services, Studio } from "@/components/Sections";
+import { Architect, ClosingQuote, Contact, Focus, Philosophy, Services, Studio } from "@/components/Sections";
 import { categories, getProject, locations, projects, projectTitle, studioImages } from "@/lib/projects";
 import { services } from "@/lib/site";
 
@@ -26,7 +26,8 @@ const blueprint = mustGet("casa-montes-urales");
 
 const quoteRefs = projects.map((p) => ({ slug: p.slug, title: projectTitle(p), category: p.category }));
 
-const portrait = { src: "/obra/gustavo.webp", sm: "/obra/gustavo.webp", width: 484, height: 648 };
+const portrait = { src: "/obra/gustavo.webp", sm: "/obra/gustavo-sm.webp", width: 825, height: 1100 };
+const studioPortrait = { src: "/obra/gustavo-estudio.webp", sm: "/obra/gustavo-estudio-sm.webp", width: 825, height: 1100 };
 
 export default function Home() {
   return (
@@ -40,6 +41,7 @@ export default function Home() {
       <Philosophy wireframe="/obra/wireframe.webp" />
       <Services />
       <Architect portrait={portrait} />
+      <Focus portrait={studioPortrait} />
       <ClosingQuote image={studioImages[1]} />
       <QuoteWizard refs={quoteRefs} />
       <Contact />

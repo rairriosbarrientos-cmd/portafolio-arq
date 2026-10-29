@@ -30,7 +30,7 @@ const jetbrains = JetBrains_Mono({
 });
 
 const description =
-  "Arquitecto en Chilpancingo, Guerrero. ARQT Estudio de Arquitectura y Diseño — Arq. Gustavo Ríos Barrientos: diseño arquitectónico, supervisión técnica, construcción, remodelación y dirección de obra.";
+  "Arquitecto en Guadalajara y Guerrero. ARQT Estudio de Arquitectura y Diseño — Arq. Gustavo Ríos Barrientos, 18 años de experiencia en diseño, supervisión técnica y construcción de proyectos residenciales y comerciales.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -40,6 +40,9 @@ export const metadata: Metadata = {
   },
   description,
   keywords: [
+    "arquitecto Guadalajara",
+    "arquitecto Zapopan",
+    "despacho de arquitectura Guadalajara",
     "arquitecto Chilpancingo",
     "arquitectos en Guerrero",
     "despacho de arquitectura",
